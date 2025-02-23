@@ -19,7 +19,7 @@ The **Personality Assessment System** is a web-based application that evaluates 
 - Axios (API communication)
 
 ### **Backend:**
-- Python (Flask framework)
+- Python (Fastapi framework)
 - PostgreSQL (Database)
 - SQLAlchemy (ORM)
 - JWT (Authentication)
