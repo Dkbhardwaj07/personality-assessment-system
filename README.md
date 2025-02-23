@@ -1,143 +1,130 @@
 # Personality Assessment System
 
 ## Overview
-The **Personality Assessment System** is a web-based application that evaluates user personality traits based on responses to a predefined set of questions. The system processes responses, applies assessment algorithms, and provides insights into personality traits.
+The **Personality Assessment System** is a web-based application designed to evaluate users' personalities based on a questionnaire. The system consists of a **FastAPI** backend and a **React** frontend, enabling users to take assessments and view their results.
 
 ## Features
-- User authentication and profile management
-- Personality trait assessment based on predefined criteria
-- Admin panel for managing assessments and user data
-- Interactive frontend with real-time feedback
-- REST API for seamless integration
-
----
+- User authentication (registration & login)
+- Personality test based on predefined questions
+- Real-time result generation
+- Admin panel for managing questions and users
 
 ## Tech Stack
-### **Frontend:**
-- React.js (UI framework)
+### Backend (FastAPI)
+- FastAPI (Python-based web framework)
+- PostgreSQL (Database)
+- SQLAlchemy (ORM)
+- JWT Authentication
+
+### Frontend (React)
+- React.js
 - Material-UI (UI components)
 - Axios (API communication)
 
-### **Backend:**
-- Python (Fastapi framework)
-- PostgreSQL (Database)
-- SQLAlchemy (ORM)
-- JWT (Authentication)
+### Additional Tools
+- Docker (Containerization)
+- GitHub Actions (CI/CD)
 
----
+## Installation
+### Prerequisites
+- Python 3.9+
+- Node.js 16+
+- PostgreSQL
+- Git
+- Docker (optional)
 
-## Setup Instructions
-### **Prerequisites**
-- Python 3.x installed
-- Node.js & npm installed
-- PostgreSQL installed and configured
-- Git installed
-
-### **Backend Setup**
+### Backend Setup (FastAPI)
 1. Clone the repository:
-   ```bash
+   ```sh
    git clone https://github.com/Dkbhardwaj07/personality-assessment-system.git
-   cd personality-assessment-system/backend
+   cd personality-assessment-system
    ```
-2. Create a virtual environment and activate it:
-   ```bash
+2. Navigate to the backend directory:
+   ```sh
+   cd backend
+   ```
+3. Create a virtual environment and activate it:
+   ```sh
    python -m venv venv
-   source venv/bin/activate  # Mac/Linux
-   venv\Scripts\activate  # Windows
+   source venv/bin/activate   # On Mac/Linux
+   venv\Scripts\activate      # On Windows
    ```
-3. Install dependencies:
-   ```bash
+4. Install dependencies:
+   ```sh
    pip install -r requirements.txt
    ```
-4. Configure environment variables (e.g., `.env` file):
-   ```bash
-   DATABASE_URL=postgresql://username:password@localhost:5432/personality_db
-   SECRET_KEY=your_secret_key
+5. Set up the environment variables:
+   ```sh
+   cp .env.example .env
    ```
-5. Run database migrations:
-   ```bash
-   flask db upgrade
+   Edit `.env` with your database and JWT settings.
+6. Run database migrations:
+   ```sh
+   alembic upgrade head
    ```
-6. Start the backend server:
-   ```bash
-   python app.py
+7. Start the FastAPI server:
+   ```sh
+   uvicorn main:app --reload
    ```
+   The API will be available at `http://127.0.0.1:8000`.
 
-### **Frontend Setup**
+### Frontend Setup (React)
 1. Navigate to the frontend directory:
-   ```bash
+   ```sh
    cd ../frontend
    ```
 2. Install dependencies:
-   ```bash
+   ```sh
    npm install
    ```
-3. Configure API endpoints in `.env`:
-   ```bash
-   REACT_APP_API_URL=http://127.0.0.1:5000
-   ```
-4. Start the frontend server:
-   ```bash
+3. Start the React development server:
+   ```sh
    npm start
    ```
-
----
+   The frontend will be available at `http://localhost:3000`.
 
 ## API Endpoints
-### **User Authentication**
-- `POST /api/auth/register` - Register a new user
-- `POST /api/auth/login` - Authenticate user and return JWT token
+### Authentication
+- `POST /auth/signup` - User registration
+- `POST /auth/login` - User login (returns JWT token)
 
-### **Personality Assessment**
-- `POST /api/assessment/submit` - Submit user responses for analysis
-- `GET /api/assessment/result` - Fetch personality assessment results
+### Personality Test
+- `GET /questions` - Fetch test questions
+- `POST /submit-test` - Submit answers and receive results
 
-### **Admin**
-- `GET /api/admin/users` - Fetch all users (admin only)
-
----
+### Admin
+- `POST /questions` - Add new questions (Admin only)
+- `DELETE /questions/{id}` - Delete a question (Admin only)
 
 ## Contribution Guidelines
-### **Steps to Contribute**
 1. Fork the repository.
-2. Clone your fork:
-   ```bash
-   git clone https://github.com/your-username/personality-assessment-system.git
+2. Create a feature branch:
+   ```sh
+   git checkout -b feature-name
    ```
-3. Create a new branch:
-   ```bash
-   git checkout -b feature-branch
-   ```
-4. Make your changes and commit:
-   ```bash
+3. Commit your changes:
+   ```sh
    git commit -m "Add new feature"
    ```
-5. Push to your fork and submit a pull request:
-   ```bash
-   git push origin feature-branch
+4. Push to your branch:
+   ```sh
+   git push origin feature-name
    ```
-
----
+5. Open a pull request.
 
 ## Deployment
-To deploy the project on a live server:
-- Use **Docker** for containerization
-- Deploy backend using **Heroku/AWS/GCP**
-- Deploy frontend using **Vercel/Netlify**
+### Docker (Optional)
+You can deploy the app using Docker:
+```sh
+docker-compose up --build
+```
 
----
+### GitHub Actions
+A CI/CD pipeline is set up using GitHub Actions for automatic deployment.
 
 ## License
 This project is licensed under the MIT License.
 
----
-
 ## Contact
-For any issues or feature requests, reach out to:
-- **Email:** hackathon@compunneldigital.com
-- **GitHub Issues:** [Open an issue](https://github.com/Dkbhardwaj07/personality-assessment-system/issues)
-
----
-
-Happy Coding! 🚀
+For queries, contact **hackathon@compunneldigital.com**.
 
