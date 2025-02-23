@@ -85,16 +85,10 @@ The **Personality Assessment System** is a web-based application designed to eva
 
 ## API Endpoints
 ### Authentication
-- `POST /auth/signup` - User registration
-- `POST /auth/login` - User login (returns JWT token)
-
+- `GET /submit-response` - Submits user responses for assessment
 ### Personality Test
-- `GET /questions` - Fetch test questions
+- `GET /get-results` - Fetch test questions
 - `POST /submit-test` - Submit answers and receive results
-
-### Admin
-- `POST /questions` - Add new questions (Admin only)
-- `DELETE /questions/{id}` - Delete a question (Admin only)
 
 ## Contribution Guidelines
 1. Fork the repository.
