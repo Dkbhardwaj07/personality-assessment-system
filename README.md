@@ -122,3 +122,13 @@ This project is licensed under the MIT License.
 ## Contact
 For queries, contact **hackathon@compunneldigital.com**.
 
+##ui
+![image](https://github.com/user-attachments/assets/a701d406-5244-4d2e-b490-0b4bf16cac0a)
+![image](https://github.com/user-attachments/assets/acc78f13-095c-44a0-b8d2-632b2529d7b9)
+![image](https://github.com/user-attachments/assets/a8e91c9c-922e-498b-9d81-cf21d45533d0)
+![image](https://github.com/user-attachments/assets/7b280529-0f75-4bdf-b27d-7224b8d4f56a)
+
+
+
+
+
